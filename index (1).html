@@ -1,0 +1,1632 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iLoveKare — Trusted Senior Care in Acworth, Georgia</title>
+    <meta name="description" content="Premium concierge-style senior care in Acworth & Kennesaw, Georgia. Personalized companion care with warmth, trust, and dignity.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        :root {
+            --color-primary: #6B2D5C;
+            --color-primary-light: #8B4A7A;
+            --color-primary-dark: #4A1F40;
+            --color-accent: #C9A96E;
+            --color-accent-light: #D9C49E;
+            --color-cream: #FAF8F5;
+            --color-warm-white: #FFFFFF;
+            --color-text: #2C2C2C;
+            --color-text-light: #6B6B6B;
+            --color-text-muted: #9A9A9A;
+            --color-border: #E8E4DF;
+            --font-display: 'Cormorant Garamond', Georgia, serif;
+            --font-body: 'Inter', -apple-system, sans-serif;
+            --transition-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+            --shadow-soft: 0 4px 24px rgba(0,0,0,0.06);
+            --shadow-medium: 0 8px 40px rgba(0,0,0,0.08);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; font-size: 16px; }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--color-text);
+            background: var(--color-cream);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        /* ===== NAVIGATION ===== */
+        .navbar {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 1000;
+            background: rgba(250, 248, 245, 0.92);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(232, 228, 223, 0.5);
+            transition: all 0.5s var(--transition-smooth);
+        }
+        .navbar.scrolled {
+            background: rgba(250, 248, 245, 0.98);
+            box-shadow: var(--shadow-soft);
+        }
+        .nav-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 80px;
+        }
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+        /* LOGO PLACEHOLDER - Replace with actual logo image */
+        .nav-logo-icon {
+            width: 44px; height: 44px;
+            background: var(--color-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-family: var(--font-display);
+            font-size: 1.3rem;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+        .nav-logo-text {
+            font-family: var(--font-display);
+            font-size: 1.6rem;
+            font-weight: 500;
+            color: var(--color-primary);
+            letter-spacing: 0.5px;
+        }
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 36px;
+            list-style: none;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: var(--color-text-light);
+            font-size: 0.9rem;
+            font-weight: 400;
+            letter-spacing: 0.3px;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px; left: 0;
+            width: 0; height: 1.5px;
+            background: var(--color-accent);
+            transition: width 0.4s var(--transition-smooth);
+        }
+        .nav-links a:hover { color: var(--color-primary); }
+        .nav-links a:hover::after { width: 100%; }
+        .nav-cta {
+            background: var(--color-primary);
+            color: white !important;
+            padding: 12px 28px;
+            border-radius: 100px;
+            font-weight: 500 !important;
+            font-size: 0.85rem !important;
+            letter-spacing: 0.5px;
+            transition: all 0.4s var(--transition-smooth);
+            border: none;
+            cursor: pointer;
+        }
+        .nav-cta::after { display: none !important; }
+        .nav-cta:hover {
+            background: var(--color-primary-dark);
+            transform: translateY(-1px);
+            box-shadow: 0 6px 20px rgba(107, 45, 92, 0.2);
+        }
+        .mobile-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--color-primary);
+            cursor: pointer;
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            padding-top: 80px;
+        }
+        .hero-bg {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            z-index: 0;
+        }
+        .hero-bg::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(135deg, rgba(107, 45, 92, 0.85) 0%, rgba(74, 31, 64, 0.9) 100%);
+            z-index: 1;
+        }
+        /* HERO BACKGROUND IMAGE PLACEHOLDER - seniors exercising outdoors */
+        .hero-bg-img {
+            width: 100%; height: 100%;
+            object-fit: cover;
+            filter: brightness(0.7);
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 40px;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+        .hero-text { max-width: 560px; }
+        .hero-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--color-accent-light);
+            font-size: 0.8rem;
+            font-weight: 500;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            margin-bottom: 28px;
+        }
+        .hero-label::before {
+            content: '';
+            width: 32px; height: 1px;
+            background: var(--color-accent);
+        }
+        .hero-title {
+            font-family: var(--font-display);
+            font-size: clamp(2.8rem, 5vw, 4.2rem);
+            font-weight: 300;
+            color: white;
+            line-height: 1.15;
+            margin-bottom: 28px;
+        }
+        .hero-title em {
+            font-style: italic;
+            font-weight: 400;
+            color: var(--color-accent-light);
+        }
+        .hero-desc {
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.75);
+            line-height: 1.8;
+            margin-bottom: 40px;
+            font-weight: 300;
+        }
+        .hero-cta-group {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--color-accent);
+            color: var(--color-primary-dark);
+            padding: 16px 36px;
+            border-radius: 100px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+            transition: all 0.4s var(--transition-smooth);
+            border: none;
+            cursor: pointer;
+        }
+        .btn-primary:hover {
+            background: var(--color-accent-light);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(201, 169, 110, 0.3);
+        }
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: transparent;
+            color: white;
+            padding: 16px 36px;
+            border-radius: 100px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+            border: 1.5px solid rgba(255,255,255,0.3);
+            transition: all 0.4s var(--transition-smooth);
+            cursor: pointer;
+        }
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.1);
+            border-color: rgba(255,255,255,0.5);
+            transform: translateY(-2px);
+        }
+        .hero-visual { position: relative; }
+        .hero-image-frame {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 24px 80px rgba(0,0,0,0.3);
+        }
+        /* HERO SIDE IMAGE PLACEHOLDER */
+        .hero-image-frame img {
+            width: 100%; height: 520px;
+            object-fit: cover;
+            display: block;
+        }
+        .hero-badge {
+            position: absolute;
+            bottom: -24px; left: -24px;
+            background: white;
+            padding: 24px 32px;
+            border-radius: 16px;
+            box-shadow: var(--shadow-medium);
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        .hero-badge-icon {
+            width: 48px; height: 48px;
+            background: var(--color-primary);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+        }
+        .hero-badge-text { display: flex; flex-direction: column; }
+        .hero-badge-label {
+            font-size: 0.75rem;
+            color: var(--color-text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 2px;
+        }
+        .hero-badge-value {
+            font-family: var(--font-display);
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--color-primary);
+        }
+
+        /* ===== TRUST BAR ===== */
+        .trust-bar {
+            background: white;
+            border-bottom: 1px solid var(--color-border);
+            padding: 32px 0;
+        }
+        .trust-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 60px;
+            flex-wrap: wrap;
+        }
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: var(--color-text-light);
+            font-size: 0.85rem;
+            font-weight: 400;
+        }
+        .trust-item i { color: var(--color-accent); font-size: 1.1rem; }
+        .trust-divider {
+            width: 1px; height: 24px;
+            background: var(--color-border);
+        }
+
+        /* ===== SECTIONS COMMON ===== */
+        .section { padding: 120px 0; }
+        .section-header {
+            text-align: center;
+            max-width: 680px;
+            margin: 0 auto 72px;
+        }
+        .section-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--color-accent);
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+        .section-label::before {
+            content: '';
+            width: 24px; height: 1px;
+            background: var(--color-accent);
+        }
+        .section-title {
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 3.5vw, 2.8rem);
+            font-weight: 300;
+            color: var(--color-primary);
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+        .section-title em {
+            font-style: italic;
+            font-weight: 400;
+            color: var(--color-accent);
+        }
+        .section-desc {
+            font-size: 1.05rem;
+            color: var(--color-text-light);
+            line-height: 1.8;
+        }
+
+        /* ===== PROMISE SECTION ===== */
+        .promise-section {
+            background: white;
+            position: relative;
+        }
+        .promise-section::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--color-border), transparent);
+        }
+        .promise-grid {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+        .promise-image {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+        /* PROMISE SECTION IMAGE PLACEHOLDER - caregiver with senior */
+        .promise-image img {
+            width: 100%; height: 500px;
+            object-fit: cover;
+            display: block;
+        }
+        .promise-image::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(180deg, transparent 60%, rgba(107, 45, 92, 0.1) 100%);
+            pointer-events: none;
+        }
+        .promise-content { padding-left: 20px; }
+        .promise-content .section-label { justify-content: flex-start; }
+        .promise-content .section-title { text-align: left; }
+        .promise-content .section-desc { text-align: left; margin-bottom: 36px; }
+        .promise-features {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .promise-feature {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            padding: 20px 24px;
+            background: var(--color-cream);
+            border-radius: 12px;
+            border: 1px solid var(--color-border);
+            transition: all 0.4s var(--transition-smooth);
+        }
+        .promise-feature:hover {
+            transform: translateX(4px);
+            border-color: var(--color-accent-light);
+            box-shadow: var(--shadow-soft);
+        }
+        .promise-feature-icon {
+            width: 40px; height: 40px;
+            min-width: 40px;
+            background: var(--color-primary);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 0.9rem;
+        }
+        .promise-feature-text h4 {
+            font-family: var(--font-display);
+            font-size: 1.15rem;
+            font-weight: 500;
+            color: var(--color-primary);
+            margin-bottom: 4px;
+        }
+        .promise-feature-text p {
+            font-size: 0.9rem;
+            color: var(--color-text-light);
+            line-height: 1.6;
+        }
+
+        /* ===== SERVICES PREVIEW SECTION ===== */
+        .services-preview-section {
+            background: var(--color-cream);
+            position: relative;
+        }
+        .services-preview-section::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--color-border), transparent);
+        }
+        .services-preview-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+        .services-preview-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 28px;
+        }
+        .service-circle-card {
+            text-align: center;
+            transition: all 0.5s var(--transition-smooth);
+        }
+        .service-circle-card:hover {
+            transform: translateY(-8px);
+        }
+        .service-circle-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 0 auto 24px;
+            border: 3px solid var(--color-accent-light);
+            padding: 4px;
+            transition: all 0.4s var(--transition-smooth);
+        }
+        .service-circle-card:hover .service-circle-image {
+            border-color: var(--color-accent);
+            box-shadow: var(--shadow-medium);
+        }
+        /* SERVICE CIRCLE IMAGES PLACEHOLDERS */
+        .service-circle-image img {
+            width: 100%; height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+        .service-circle-title {
+            font-family: var(--font-display);
+            font-size: 1.3rem;
+            font-weight: 500;
+            color: var(--color-primary);
+            margin-bottom: 12px;
+        }
+        .service-circle-desc {
+            font-size: 0.9rem;
+            color: var(--color-text-light);
+            line-height: 1.7;
+            padding: 0 12px;
+        }
+        .services-cta {
+            text-align: center;
+            margin-top: 56px;
+        }
+
+        /* ===== WHY US SECTION ===== */
+        .why-section {
+            background: white;
+            position: relative;
+        }
+        .why-section::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--color-border), transparent);
+        }
+        .why-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+        .why-card {
+            text-align: center;
+            padding: 40px 28px;
+            background: var(--color-cream);
+            border-radius: 20px;
+            border: 1px solid var(--color-border);
+            transition: all 0.5s var(--transition-smooth);
+        }
+        .why-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-soft);
+            border-color: var(--color-accent-light);
+        }
+        .why-card-icon {
+            width: 64px; height: 64px;
+            background: var(--color-primary);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 24px;
+            color: white;
+            font-size: 1.4rem;
+            transition: all 0.4s var(--transition-smooth);
+        }
+        .why-card:hover .why-card-icon {
+            background: var(--color-accent);
+            color: var(--color-primary-dark);
+        }
+        .why-card-title {
+            font-family: var(--font-display);
+            font-size: 1.3rem;
+            font-weight: 500;
+            color: var(--color-primary);
+            margin-bottom: 10px;
+        }
+        .why-card-desc {
+            font-size: 0.9rem;
+            color: var(--color-text-light);
+            line-height: 1.7;
+        }
+
+        /* ===== STAY HOME / VIRTUAL SECTION ===== */
+        .split-feature-section {
+            background: var(--color-cream);
+            position: relative;
+        }
+        .split-feature-section::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--color-border), transparent);
+        }
+        .split-feature-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+        .split-feature-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+        }
+        .split-feature-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid var(--color-border);
+            transition: all 0.5s var(--transition-smooth);
+        }
+        .split-feature-card:hover {
+            box-shadow: var(--shadow-medium);
+            transform: translateY(-4px);
+        }
+        .split-feature-image {
+            position: relative;
+            height: 280px;
+            overflow: hidden;
+        }
+        /* SPLIT FEATURE IMAGES PLACEHOLDERS - Stay Home & Virtual */
+        .split-feature-image img {
+            width: 100%; height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s var(--transition-smooth);
+        }
+        .split-feature-card:hover .split-feature-image img {
+            transform: scale(1.05);
+        }
+        .split-feature-content {
+            padding: 32px;
+        }
+        .split-feature-title {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: var(--color-primary);
+            margin-bottom: 12px;
+        }
+        .split-feature-desc {
+            font-size: 0.95rem;
+            color: var(--color-text-light);
+            line-height: 1.7;
+            margin-bottom: 24px;
+        }
+        .btn-outline {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: transparent;
+            color: var(--color-primary);
+            padding: 12px 28px;
+            border-radius: 100px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.85rem;
+            letter-spacing: 0.5px;
+            border: 1.5px solid var(--color-primary);
+            transition: all 0.4s var(--transition-smooth);
+            cursor: pointer;
+        }
+        .btn-outline:hover {
+            background: var(--color-primary);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* ===== CONTACT CTA SECTION ===== */
+        .contact-cta-section {
+            background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        .contact-cta-section::before {
+            content: '';
+            position: absolute;
+            top: -50%; right: -20%;
+            width: 600px; height: 600px;
+            background: rgba(201, 169, 110, 0.05);
+            border-radius: 50%;
+        }
+        .contact-cta-section::after {
+            content: '';
+            position: absolute;
+            bottom: -30%; left: -10%;
+            width: 400px; height: 400px;
+            background: rgba(201, 169, 110, 0.03);
+            border-radius: 50%;
+        }
+        .contact-cta-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 40px;
+            position: relative;
+            z-index: 2;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+        .contact-cta-content { color: white; }
+        .contact-cta-content .section-label {
+            color: var(--color-accent-light);
+            justify-content: flex-start;
+        }
+        .contact-cta-content .section-label::before { background: var(--color-accent); }
+        .contact-cta-content .section-title { color: white; text-align: left; }
+        .contact-cta-content .section-desc {
+            color: rgba(255,255,255,0.7);
+            text-align: left;
+            margin-bottom: 40px;
+        }
+        .contact-info-list {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+        .contact-info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 18px;
+        }
+        .contact-info-icon {
+            width: 48px; height: 48px;
+            min-width: 48px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-accent);
+            font-size: 1.1rem;
+            transition: all 0.4s var(--transition-smooth);
+        }
+        .contact-info-item:hover .contact-info-icon {
+            background: var(--color-accent);
+            color: var(--color-primary-dark);
+        }
+        .contact-info-text h4 {
+            font-family: var(--font-display);
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: white;
+            margin-bottom: 4px;
+        }
+        .contact-info-text p, .contact-info-text a {
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.65);
+            line-height: 1.6;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .contact-info-text a:hover { color: var(--color-accent-light); }
+        .contact-form-wrapper {
+            background: white;
+            border-radius: 24px;
+            padding: 48px 40px;
+            box-shadow: 0 24px 80px rgba(0,0,0,0.15);
+        }
+        .contact-form-title {
+            font-family: var(--font-display);
+            font-size: 1.6rem;
+            font-weight: 500;
+            color: var(--color-primary);
+            margin-bottom: 8px;
+        }
+        .contact-form-subtitle {
+            font-size: 0.9rem;
+            color: var(--color-text-muted);
+            margin-bottom: 32px;
+        }
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+        .form-group label {
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: var(--color-text-light);
+            letter-spacing: 0.3px;
+        }
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            padding: 14px 18px;
+            border: 1.5px solid var(--color-border);
+            border-radius: 12px;
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            color: var(--color-text);
+            background: var(--color-cream);
+            transition: all 0.3s var(--transition-smooth);
+            outline: none;
+        }
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            border-color: var(--color-accent);
+            background: white;
+            box-shadow: 0 0 0 4px rgba(201, 169, 110, 0.1);
+        }
+        .form-group textarea { min-height: 120px; resize: vertical; }
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+        .form-submit {
+            background: var(--color-primary);
+            color: white;
+            padding: 16px 32px;
+            border-radius: 12px;
+            border: none;
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            cursor: pointer;
+            transition: all 0.4s var(--transition-smooth);
+            margin-top: 8px;
+        }
+        .form-submit:hover {
+            background: var(--color-primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(107, 45, 92, 0.25);
+        }
+        .form-privacy {
+            font-size: 0.75rem;
+            color: var(--color-text-muted);
+            text-align: center;
+            margin-top: 16px;
+        }
+        .form-privacy i { color: var(--color-accent); margin-right: 4px; }
+
+        /* ===== MAP SECTION ===== */
+        .map-section {
+            background: white;
+            position: relative;
+        }
+        .map-section::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--color-border), transparent);
+        }
+        .map-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 40px 80px;
+        }
+        .map-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .map-wrapper {
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid var(--color-border);
+            box-shadow: var(--shadow-soft);
+        }
+        /* GOOGLE MAP EMBED PLACEHOLDER */
+        .map-wrapper iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            display: block;
+        }
+        .map-directions-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--color-primary);
+            color: white;
+            padding: 14px 32px;
+            border-radius: 100px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            margin-top: 24px;
+            transition: all 0.4s var(--transition-smooth);
+        }
+        .map-directions-btn:hover {
+            background: var(--color-primary-dark);
+            transform: translateY(-2px);
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            background: var(--color-primary-dark);
+            color: rgba(255,255,255,0.6);
+            padding: 64px 0 32px;
+        }
+        .footer-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 48px;
+            margin-bottom: 48px;
+        }
+        .footer-brand { max-width: 320px; }
+        .footer-brand-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+        .footer-brand-logo .nav-logo-icon {
+            width: 40px; height: 40px;
+            font-size: 1.1rem;
+        }
+        .footer-brand-logo .nav-logo-text {
+            font-size: 1.4rem;
+            color: white;
+        }
+        .footer-brand-desc {
+            font-size: 0.9rem;
+            line-height: 1.7;
+            color: rgba(255,255,255,0.5);
+            margin-bottom: 24px;
+        }
+        .footer-social {
+            display: flex;
+            gap: 12px;
+        }
+        .footer-social a {
+            width: 40px; height: 40px;
+            border-radius: 10px;
+            background: rgba(255,255,255,0.08);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(255,255,255,0.6);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        .footer-social a:hover {
+            background: var(--color-accent);
+            color: var(--color-primary-dark);
+        }
+        .footer-col h4 {
+            font-family: var(--font-display);
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: white;
+            margin-bottom: 20px;
+        }
+        .footer-col ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .footer-col a {
+            color: rgba(255,255,255,0.5);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+        .footer-col a:hover { color: var(--color-accent-light); }
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.08);
+            padding-top: 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+        .footer-bottom p {
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.35);
+        }
+        .footer-bottom-links {
+            display: flex;
+            gap: 24px;
+        }
+        .footer-bottom-links a {
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.35);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .footer-bottom-links a:hover { color: var(--color-accent-light); }
+
+        /* ===== MOBILE RESPONSIVE ===== */
+        @media (max-width: 1024px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 48px;
+                text-align: center;
+            }
+            .hero-text { max-width: 100%; }
+            .hero-label { justify-content: center; }
+            .hero-cta-group { justify-content: center; }
+            .hero-visual { max-width: 500px; margin: 0 auto; }
+            .promise-grid,
+            .contact-cta-container { grid-template-columns: 1fr; gap: 48px; }
+            .promise-content,
+            .contact-cta-content { order: 2; }
+            .promise-content .section-label,
+            .contact-cta-content .section-label { justify-content: center; }
+            .promise-content .section-title,
+            .contact-cta-content .section-title { text-align: center; }
+            .promise-content .section-desc,
+            .contact-cta-content .section-desc { text-align: center; }
+            .services-preview-grid { grid-template-columns: repeat(2, 1fr); }
+            .why-grid { grid-template-columns: repeat(2, 1fr); }
+            .split-feature-grid { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 80px; left: 0; right: 0;
+                background: var(--color-cream);
+                flex-direction: column;
+                padding: 24px 40px;
+                gap: 20px;
+                border-bottom: 1px solid var(--color-border);
+                box-shadow: var(--shadow-medium);
+            }
+            .nav-links.active { display: flex; }
+            .mobile-toggle { display: block; }
+            .nav-container { padding: 0 24px; }
+            .hero-content { padding: 0 24px; }
+            .hero-title { font-size: 2.4rem; }
+            .hero-desc { font-size: 1rem; }
+            .hero-image-frame img { height: 360px; }
+            .hero-badge {
+                left: 16px; bottom: -16px;
+                padding: 16px 20px;
+                border-radius: 12px;
+            }
+            .hero-badge-value { font-size: 1.1rem; }
+            .section { padding: 72px 0; }
+            .section-header { margin-bottom: 48px; padding: 0 24px; }
+            .promise-grid,
+            .contact-cta-container,
+            .services-preview-container,
+            .why-container,
+            .split-feature-container,
+            .map-container,
+            .footer-container { padding: 0 24px; }
+            .promise-image img { height: 360px; }
+            .services-preview-grid,
+            .why-grid { grid-template-columns: 1fr; }
+            .service-circle-image { width: 160px; height: 160px; }
+            .contact-form-wrapper { padding: 32px 24px; }
+            .form-row { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr; gap: 36px; }
+            .footer-bottom { flex-direction: column; text-align: center; }
+            .trust-container { padding: 0 24px; gap: 20px; }
+            .trust-divider { display: none; }
+            .trust-item { font-size: 0.8rem; }
+            .map-container { padding: 0 24px 60px; }
+            .map-wrapper iframe { height: 300px; }
+        }
+
+        /* ===== ANIMATIONS ===== */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-in {
+            opacity: 0;
+            animation: fadeInUp 0.8s var(--transition-smooth) forwards;
+        }
+        .delay-1 { animation-delay: 0.1s; }
+        .delay-2 { animation-delay: 0.2s; }
+        .delay-3 { animation-delay: 0.3s; }
+        .delay-4 { animation-delay: 0.4s; }
+
+        /* ===== SMOOTH SCROLL OFFSET ===== */
+        section[id] { scroll-margin-top: 100px; }
+    </style>
+</head>
+<body>
+
+    <!-- NAVIGATION -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <!-- LOGO PLACEHOLDER: Replace nav-logo-icon and nav-logo-text with your actual logo image -->
+            <a href="index.html" class="nav-logo">
+                <div class="nav-logo-icon">iL</div>
+                <span class="nav-logo-text">iLoveKare</span>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="story.html">Our Story</a></li>
+                <li><a href="team.html">Kare Team</a></li>
+                <li><a href="contact.html" class="nav-cta">Schedule a Consultation</a></li>
+            </ul>
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+        <div class="hero-bg">
+            <!-- HERO BACKGROUND IMAGE: Replace src with your hero image (seniors exercising outdoors) -->
+            <img src="images/hero-bg.jpg" alt="iLoveKare senior care" class="hero-bg-img">
+        </div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <div class="hero-label animate-in">Trusted Senior Care</div>
+                <h1 class="hero-title animate-in delay-1">
+                    Care That Feels<br>Like <em>Family</em>
+                </h1>
+                <p class="hero-desc animate-in delay-2">
+                    Personalized, concierge-style senior care in Acworth and Kennesaw, Georgia. 
+                    We help aging adults maintain independence, dignity, and joy — all from the comfort of home.
+                </p>
+                <div class="hero-cta-group animate-in delay-3">
+                    <a href="contact.html" class="btn-primary">
+                        <i class="fas fa-calendar-check"></i>
+                        Schedule a Private Consultation
+                    </a>
+                    <a href="services.html" class="btn-secondary">
+                        <i class="fas fa-arrow-right"></i>
+                        Explore Our Services
+                    </a>
+                </div>
+            </div>
+            <div class="hero-visual animate-in delay-4">
+                <div class="hero-image-frame">
+                    <!-- HERO SIDE IMAGE: Replace with your preferred hero side image -->
+                    <img src="images/hero-side.jpg" alt="Senior care companionship">
+                </div>
+                <div class="hero-badge">
+                    <div class="hero-badge-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <div class="hero-badge-text">
+                        <span class="hero-badge-label">BBB Accredited</span>
+                        <span class="hero-badge-value">A+ Rating</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TRUST BAR -->
+    <div class="trust-bar">
+        <div class="trust-container">
+            <div class="trust-item">
+                <i class="fas fa-shield-alt"></i>
+                <span>BBB Accredited Business</span>
+            </div>
+            <div class="trust-divider"></div>
+            <div class="trust-item">
+                <i class="fas fa-heart"></i>
+                <span>Compassionate, Trained Caregivers</span>
+            </div>
+            <div class="trust-divider"></div>
+            <div class="trust-item">
+                <i class="fas fa-home"></i>
+                <span>Aging in Place Specialists</span>
+            </div>
+            <div class="trust-divider"></div>
+            <div class="trust-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>Serving Acworth & Kennesaw, GA</span>
+            </div>
+            <div class="trust-divider"></div>
+            <div class="trust-item">
+                <i class="fas fa-phone"></i>
+                <span>(404) 692-0539</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- PROMISE / INTRO -->
+    <section class="section promise-section" id="about">
+        <div class="promise-grid">
+            <div class="promise-image">
+                <!-- PROMISE IMAGE: Replace with caregiver with senior client photo -->
+                <img src="images/promise-caregiver.jpg" alt="iLoveKare caregiver with senior client">
+            </div>
+            <div class="promise-content">
+                <div class="section-label">Our Promise</div>
+                <h2 class="section-title">Dedicated to Quality,<br><em>Rooted in Compassion</em></h2>
+                <p class="section-desc">
+                    Since 2013, iLoveKare has been a trusted partner for families seeking thoughtful, 
+                    personalized senior care. We believe every aging adult deserves to live with dignity, 
+                    independence, and the warmth of genuine human connection.
+                </p>
+                <div class="promise-features">
+                    <div class="promise-feature">
+                        <div class="promise-feature-icon">
+                            <i class="fas fa-user-friends"></i>
+                        </div>
+                        <div class="promise-feature-text">
+                            <h4>Companion Care</h4>
+                            <p>Helping seniors maintain independence and mobility with customized, one-on-one support.</p>
+                        </div>
+                    </div>
+                    <div class="promise-feature">
+                        <div class="promise-feature-icon">
+                            <i class="fas fa-laptop"></i>
+                        </div>
+                        <div class="promise-feature-text">
+                            <h4>Tech Training & Support</h4>
+                            <p>Patient, hands-on technology education for individuals or small groups.</p>
+                        </div>
+                    </div>
+                    <div class="promise-feature">
+                        <div class="promise-feature-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div class="promise-feature-text">
+                            <h4>Safety Prevention</h4>
+                            <p>Proactive in-home and out-of-home safety measures to reduce risk and provide peace of mind.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES CIRCLES (matching current site layout) -->
+    <section class="section services-preview-section" id="services">
+        <div class="services-preview-container">
+            <div class="section-header">
+                <div class="section-label">What We Offer</div>
+                <h2 class="section-title">Concierge Care, <em>Tailored to You</em></h2>
+                <p class="section-desc">
+                    Every family is unique. We design flexible care plans that fit your schedule, 
+                    your preferences, and your loved one's needs — delivered with warmth and professionalism.
+                </p>
+            </div>
+            <div class="services-preview-grid">
+                <div class="service-circle-card">
+                    <div class="service-circle-image">
+                        <!-- SERVICE IMAGE: Group photo of seniors/caregivers in a room -->
+                        <img src="images/service-companion.jpg" alt="Companion Care">
+                    </div>
+                    <h3 class="service-circle-title">Companion Care</h3>
+                    <p class="service-circle-desc">
+                        Helping seniors maintain and preserve their independence and mobility. 
+                        Senior care customized to your family or individual needs.
+                    </p>
+                </div>
+                <div class="service-circle-card">
+                    <div class="service-circle-image">
+                        <!-- SERVICE IMAGE: Caregiver teaching seniors at a table -->
+                        <img src="images/service-tech.jpg" alt="Tech Training">
+                    </div>
+                    <h3 class="service-circle-title">Tech Training</h3>
+                    <p class="service-circle-desc">
+                        We provide technology-based educational programs. 
+                        One-on-one classes, group sessions, and in-home support.
+                    </p>
+                </div>
+                <div class="service-circle-card">
+                    <div class="service-circle-image">
+                        <!-- SERVICE IMAGE: Caregiver walking with senior woman in hallway -->
+                        <img src="images/service-safety.jpg" alt="Safety Prevention">
+                    </div>
+                    <h3 class="service-circle-title">Safety Prevention</h3>
+                    <p class="service-circle-desc">
+                        Both in and out of home is a top priority for elder care. 
+                        Reducing risk and ensuring peace of mind for families.
+                    </p>
+                </div>
+                <div class="service-circle-card">
+                    <div class="service-circle-image">
+                        <!-- SERVICE IMAGE: BBB Accredited badge/logo -->
+                        <img src="images/bbb-badge.jpg" alt="BBB Accredited">
+                    </div>
+                    <h3 class="service-circle-title">BBB Accredited</h3>
+                    <p class="service-circle-desc">
+                        iLoveKare is a BBB-accredited company committed to trust, 
+                        transparency, and high standards of senior care.
+                    </p>
+                </div>
+            </div>
+            <div class="services-cta">
+                <a href="services.html" class="btn-primary">
+                    <i class="fas fa-arrow-right"></i>
+                    View All Services
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY CHOOSE US -->
+    <section class="section why-section">
+        <div class="why-container">
+            <div class="section-header">
+                <div class="section-label">Why Families Trust Us</div>
+                <h2 class="section-title">The iLoveKare <em>Difference</em></h2>
+                <p class="section-desc">
+                    We are more than a service — we are an extension of your family. 
+                    Our approach is built on trust, transparency, and a deep respect for the people we serve.
+                </p>
+            </div>
+            <div class="why-grid">
+                <div class="why-card">
+                    <div class="why-card-icon">
+                        <i class="fas fa-hand-holding-heart"></i>
+                    </div>
+                    <h3 class="why-card-title">Compassion First</h3>
+                    <p class="why-card-desc">Every caregiver is selected for empathy, patience, and genuine warmth — not just credentials.</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-card-icon">
+                        <i class="fas fa-clipboard-check"></i>
+                    </div>
+                    <h3 class="why-card-title">Customized Plans</h3>
+                    <p class="why-card-desc">No one-size-fits-all. We build care around your loved one's unique routines and preferences.</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-card-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <h3 class="why-card-title">BBB Accredited</h3>
+                    <p class="why-card-desc">Our A+ BBB rating reflects our commitment to ethical practices and exceptional service.</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-card-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3 class="why-card-title">Flexible Scheduling</h3>
+                    <p class="why-card-desc">Part-time, full-time, or as-needed — we adapt to your family's evolving needs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- STAY HOME / VIRTUAL SPLIT (matching current site) -->
+    <section class="section split-feature-section">
+        <div class="split-feature-container">
+            <div class="split-feature-grid">
+                <div class="split-feature-card">
+                    <div class="split-feature-image">
+                        <!-- FEATURE IMAGE: Caregiver with senior woman sitting and talking -->
+                        <img src="images/stay-home.jpg" alt="Stay Home - In-home senior care">
+                    </div>
+                    <div class="split-feature-content">
+                        <h3 class="split-feature-title">Stay Home</h3>
+                        <p class="split-feature-desc">
+                            We'll get the job done for you. That way you can relax and stay safe. 
+                            Curbside or no-contact options are available with your customized senior care package.
+                        </p>
+                        <a href="services.html" class="btn-outline">
+                            <i class="fas fa-arrow-right"></i>
+                            Learn More
+                        </a>
+                    </div>
+                </div>
+                <div class="split-feature-card">
+                    <div class="split-feature-image">
+                        <!-- FEATURE IMAGE: Senior woman on a video call -->
+                        <img src="images/virtual-care.jpg" alt="Virtual - Remote senior care support">
+                    </div>
+                    <div class="split-feature-content">
+                        <h3 class="split-feature-title">Virtual</h3>
+                        <p class="split-feature-desc">
+                            Frustrated with technology? We provide senior care technology training 
+                            and support for individuals or groups — remotely or in person.
+                        </p>
+                        <a href="services.html" class="btn-outline">
+                            <i class="fas fa-arrow-right"></i>
+                            Learn More
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT CTA -->
+    <section class="section contact-cta-section" id="contact">
+        <div class="contact-cta-container">
+            <div class="contact-cta-content">
+                <div class="section-label">Get in Touch</div>
+                <h2 class="section-title">Begin With a <em>Conversation</em></h2>
+                <p class="section-desc">
+                    A consultation with an iLoveKare senior care associate can save you time, money, 
+                    and provide your family with the confidence that you are making the best decisions.
+                </p>
+                <div class="contact-info-list">
+                    <div class="contact-info-item">
+                        <div class="contact-info-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-info-text">
+                            <h4>Visit Us</h4>
+                            <p>2774 Cobb Pkwy NW STE 109<br>Kennesaw, Georgia 30152</p>
+                        </div>
+                    </div>
+                    <div class="contact-info-item">
+                        <div class="contact-info-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div class="contact-info-text">
+                            <h4>Call Us</h4>
+                            <a href="tel:4046920539">(404) 692-0539</a>
+                        </div>
+                    </div>
+                    <div class="contact-info-item">
+                        <div class="contact-info-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="contact-info-text">
+                            <h4>Hours</h4>
+                            <p>Monday – Friday: 8:00 AM – 5:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="contact-form-wrapper">
+                <h3 class="contact-form-title">Request a Consultation</h3>
+                <p class="contact-form-subtitle">Private, no-obligation. We'll respond within one business day.</p>
+                <form class="contact-form" action="#" method="POST">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstName">First Name</label>
+                            <input type="text" id="firstName" name="firstName" placeholder="Your first name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Last Name</label>
+                            <input type="text" id="lastName" name="lastName" placeholder="Your last name" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" placeholder="your@email.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone</label>
+                            <input type="tel" id="phone" name="phone" placeholder="(404) 000-0000">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="service">Service Interest</label>
+                        <select id="service" name="service">
+                            <option value="">Select a service...</option>
+                            <option value="companion">Companion Care</option>
+                            <option value="tech">Tech Training & Support</option>
+                            <option value="travel">Travel Concierge</option>
+                            <option value="errands">Errands & Deliveries</option>
+                            <option value="home">Home Management</option>
+                            <option value="meal">Meal Preparation</option>
+                            <option value="transition">Hospital & Rehab Transition</option>
+                            <option value="assistant">Personal Assistant</option>
+                            <option value="virtual">Virtual Support</option>
+                            <option value="other">Other / Not Sure</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">How Can We Help?</label>
+                        <textarea id="message" name="message" placeholder="Tell us a little about your situation and what you're looking for..."></textarea>
+                    </div>
+                    <button type="submit" class="form-submit">
+                        <i class="fas fa-paper-plane"></i>
+                        Send Request
+                    </button>
+                    <p class="form-privacy">
+                        <i class="fas fa-lock"></i>
+                        Your information is kept private and confidential.
+                    </p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- MAP SECTION -->
+    <section class="section map-section">
+        <div class="map-container">
+            <div class="map-header">
+                <div class="section-label">Find Us</div>
+                <h2 class="section-title">Visit Our <em>Office</em></h2>
+            </div>
+            <div class="map-wrapper">
+                <!-- GOOGLE MAP EMBED: Replace the iframe src with your actual Google Maps embed code -->
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3308.1!2d-84.6!3d34.0!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzTCsDAwJzAwLjAiTiA4NMKwMzYnMDAuMCJX!5e0!3m2!1sen!2sus!4v1" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+            <div style="text-align: center;">
+                <a href="https://maps.google.com/?q=2774+Cobb+Pkwy+NW+STE+109,+Kennesaw,+GA+30152" 
+                   target="_blank" 
+                   class="map-directions-btn">
+                    <i class="fas fa-location-arrow"></i>
+                    Get Directions
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <!-- LOGO PLACEHOLDER: Replace with your actual logo -->
+                    <div class="footer-brand-logo">
+                        <div class="nav-logo-icon">iL</div>
+                        <span class="nav-logo-text">iLoveKare</span>
+                    </div>
+                    <p class="footer-brand-desc">
+                        Trusted senior care in Acworth and Kennesaw, Georgia. 
+                        Personalized, compassionate support for aging adults and their families.
+                    </p>
+                    <!-- SOCIAL MEDIA: Add your actual social icons/images here -->
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="Yelp"><i class="fab fa-yelp"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="story.html">Our Story</a></li>
+                        <li><a href="team.html">Kare Team</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="services.html">Companion Care</a></li>
+                        <li><a href="services.html">Tech Training</a></li>
+                        <li><a href="services.html">Travel Concierge</a></li>
+                        <li><a href="services.html">View All</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="resources.html">Senior Resources</a></li>
+                        <li><a href="survey.html">Family Survey</a></li>
+                        <li><a href="contact.html">Careers</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>Copyright 2026 iLoveKare. All Rights Reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile menu toggle
+        const mobileToggle = document.getElementById('mobileToggle');
+        const navLinks = document.getElementById('navLinks');
+        mobileToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            const icon = mobileToggle.querySelector('i');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-times');
+        });
+
+        // Close mobile menu on link click
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                const icon = mobileToggle.querySelector('i');
+                icon.classList.add('fa-bars');
+                icon.classList.remove('fa-times');
+            });
+        });
+    </script>
+
+</body>
+</html>
