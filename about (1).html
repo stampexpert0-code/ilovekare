@@ -1,0 +1,1667 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us — iLoveKare | Trusted Senior Care in Cherokee & Cobb County</title>
+    <meta name="description" content="Meet Kimberly Haase and the iLoveKare team. Trusted concierge-style senior care in Cherokee & Cobb County since 2013. BBB Accredited, compassionate, and dedicated.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        :root {
+            --color-primary: #6B2D5C;
+            --color-primary-light: #8B4A7A;
+            --color-primary-dark: #4A1F40;
+            --color-accent: #C9A96E;
+            --color-accent-light: #D9C49E;
+            --color-cream: #FAF8F5;
+            --color-warm-white: #FFFFFF;
+            --color-text: #2C2C2C;
+            --color-text-light: #6B6B6B;
+            --color-text-muted: #9A9A9A;
+            --color-border: #E8E4DF;
+            --font-display: 'Cormorant Garamond', Georgia, serif;
+            --font-body: 'Inter', -apple-system, sans-serif;
+            --transition-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+            --shadow-soft: 0 4px 24px rgba(0,0,0,0.06);
+            --shadow-medium: 0 8px 40px rgba(0,0,0,0.08);
+            --shadow-strong: 0 16px 60px rgba(0,0,0,0.12);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; font-size: 16px; }
+        body {
+            font-family: var(--font-body);
+            color: var(--color-text);
+            background: var(--color-cream);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+        .navbar {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 1000;
+            background: rgba(250, 248, 245, 0.92);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(232, 228, 223, 0.5);
+            transition: all 0.5s var(--transition-smooth);
+        }
+        .navbar.scrolled {
+            background: rgba(250, 248, 245, 0.98);
+            box-shadow: var(--shadow-soft);
+        }
+        .nav-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 80px;
+        }
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+        .nav-logo img {
+            height: 44px;
+            width: auto;
+            display: block;
+        }
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 36px;
+            list-style: none;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: var(--color-text-light);
+            font-size: 0.9rem;
+            font-weight: 400;
+            letter-spacing: 0.3px;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px; left: 0;
+            width: 0; height: 1.5px;
+            background: var(--color-accent);
+            transition: width 0.4s var(--transition-smooth);
+        }
+        .nav-links a:hover { color: var(--color-primary); }
+        .nav-links a:hover::after { width: 100%; }
+        .nav-links a.active { color: var(--color-primary); }
+        .nav-links a.active::after { width: 100%; }
+        .nav-cta {
+            background: var(--color-primary);
+            color: white !important;
+            padding: 12px 28px;
+            border-radius: 100px;
+            font-weight: 500 !important;
+            font-size: 0.85rem !important;
+            letter-spacing: 0.5px;
+            transition: all 0.4s var(--transition-smooth);
+            border: none;
+            cursor: pointer;
+        }
+        .nav-cta::after { display: none !important; }
+        .nav-cta:hover {
+            background: var(--color-primary-dark);
+            transform: translateY(-1px);
+            box-shadow: 0 6px 20px rgba(107, 45, 92, 0.2);
+        }
+        .mobile-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--color-primary);
+            cursor: pointer;
+        }
+        .page-hero {
+            min-height: 55vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            padding-top: 80px;
+            background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary) 50%, var(--color-primary-light) 100%);
+        }
+        .page-hero::before {
+            content: '';
+            position: absolute;
+            top: -50%; right: -20%;
+            width: 600px; height: 600px;
+            background: rgba(201, 169, 110, 0.06);
+            border-radius: 50%;
+        }
+        .page-hero::after {
+            content: '';
+            position: absolute;
+            bottom: -30%; left: -10%;
+            width: 400px; height: 400px;
+            background: rgba(201, 169, 110, 0.04);
+            border-radius: 50%;
+        }
+        .page-hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 80px 40px;
+            width: 100%;
+            text-align: center;
+        }
+        .page-hero-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--color-accent-light);
+            font-size: 0.8rem;
+            font-weight: 500;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            margin-bottom: 24px;
+        }
+        .page-hero-label::before {
+            content: '';
+            width: 32px; height: 1px;
+            background: var(--color-accent);
+        }
+        .page-hero-label::after {
+            content: '';
+            width: 32px; height: 1px;
+            background: var(--color-accent);
+        }
+        .page-hero-title {
+            font-family: var(--font-display);
+            font-size: clamp(2.8rem, 5vw, 4.2rem);
+            font-weight: 300;
+            color: white;
+            line-height: 1.15;
+            margin-bottom: 24px;
+        }
+        .page-hero-title em {
+            font-style: italic;
+            font-weight: 400;
+            color: var(--color-accent-light);
+        }
+        .page-hero-desc {
+            font-size: 1.15rem;
+            color: rgba(255,255,255,0.75);
+            line-height: 1.8;
+            max-width: 700px;
+            margin: 0 auto;
+            font-weight: 300;
+        }
+        .section { padding: 120px 0; }
+        .section-header {
+            text-align: center;
+            max-width: 720px;
+            margin: 0 auto 80px;
+        }
+        .section-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--color-accent);
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+        .section-label::before {
+            content: '';
+            width: 24px; height: 1px;
+            background: var(--color-accent);
+        }
+        .section-title {
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 3.5vw, 2.8rem);
+            font-weight: 300;
+            color: var(--color-primary);
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+        .section-title em {
+            font-style: italic;
+            font-weight: 400;
+            color: var(--color-accent);
+        }
+        .section-desc {
+            font-size: 1.05rem;
+            color: var(--color-text-light);
+            line-height: 1.8;
+        }
+
+        /* ===== FOUNDER VIDEO SECTION ===== */
+        .founder-section {
+            background: white;
+            position: relative;
+        }
+        .founder-section::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--color-border), transparent);
+        }
+        .founder-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+        .founder-grid {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 100px;
+            align-items: center;
+        }
+        .founder-video-wrapper {
+            position: relative;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: var(--shadow-strong);
+            background: var(--color-primary-dark);
+        }
+        .founder-video-wrapper video {
+            width: 100%;
+            height: 480px;
+            object-fit: cover;
+            display: block;
+            border: none;
+        }
+        .founder-video-badge {
+            position: absolute;
+            bottom: 24px;
+            left: 24px;
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(10px);
+            padding: 16px 24px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            box-shadow: var(--shadow-medium);
+        }
+        .founder-video-badge-icon {
+            width: 44px;
+            height: 44px;
+            background: var(--color-primary);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1rem;
+        }
+        .founder-video-badge-text { display: flex; flex-direction: column; }
+        .founder-video-badge-label {
+            font-size: 0.7rem;
+            color: var(--color-text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 2px;
+        }
+        .founder-video-badge-name {
+            font-family: var(--font-display);
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--color-primary);
+        }
+        .founder-content { padding-left: 20px; }
+        .founder-content .section-label { justify-content: flex-start; }
+        .founder-content .section-title { text-align: left; }
+        .founder-content .section-desc { text-align: left; margin-bottom: 28px; }
+        .founder-story {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin-bottom: 36px;
+        }
+        .founder-story p {
+            font-size: 1rem;
+            color: var(--color-text-light);
+            line-height: 1.85;
+        }
+        .founder-story p strong {
+            color: var(--color-primary);
+            font-weight: 500;
+        }
+        .founder-quote {
+            font-family: var(--font-display);
+            font-size: 1.4rem;
+            font-style: italic;
+            color: var(--color-primary);
+            line-height: 1.6;
+            padding: 32px 36px 32px 48px;
+            background: var(--color-cream);
+            border-left: 3px solid var(--color-accent);
+            border-radius: 0 16px 16px 0;
+            margin-bottom: 36px;
+            position: relative;
+        }
+        .founder-quote::before {
+            content: '"';
+            font-family: var(--font-display);
+            font-size: 4rem;
+            color: var(--color-accent);
+            opacity: 0.3;
+            position: absolute;
+            top: 8px;
+            left: 16px;
+            line-height: 1;
+        }
+        .founder-signature {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+        .founder-name {
+            font-family: var(--font-display);
+            font-size: 1.6rem;
+            font-weight: 500;
+            color: var(--color-primary);
+        }
+        .founder-role {
+            font-size: 0.85rem;
+            color: var(--color-accent);
+            font-weight: 500;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        /* ===== GALLERY SECTION (LIGHTBOX) ===== */
+        .gallery-section {
+            background: var(--color-cream);
+            position: relative;
+        }
+        .gallery-section::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--color-border), transparent);
+        }
+        .gallery-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+        }
+        .gallery-item {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            cursor: pointer;
+            box-shadow: var(--shadow-soft);
+            transition: all 0.5s var(--transition-smooth);
+            aspect-ratio: 4/3;
+        }
+        .gallery-item:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-strong);
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.7s var(--transition-smooth);
+        }
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        .gallery-item-overlay {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(180deg, transparent 40%, rgba(74, 31, 64, 0.75) 100%);
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            padding: 28px;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+        .gallery-item:hover .gallery-item-overlay {
+            opacity: 1;
+        }
+        .gallery-item-overlay span {
+            color: white;
+            font-size: 0.9rem;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            letter-spacing: 0.5px;
+        }
+        .gallery-item-overlay span i {
+            font-size: 1.1rem;
+            color: var(--color-accent-light);
+        }
+
+        /* ===== LIGHTBOX ===== */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0,0,0,0.94);
+            z-index: 9999;
+            align-items: center;
+            justify-content: center;
+            padding: 40px;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+        .lightbox.active {
+            display: flex;
+            opacity: 1;
+        }
+        .lightbox-content {
+            position: relative;
+            max-width: 90vw;
+            max-height: 90vh;
+            border-radius: 16px;
+            overflow: hidden;
+        }
+        .lightbox-content img {
+            max-width: 90vw;
+            max-height: 90vh;
+            object-fit: contain;
+            display: block;
+            border-radius: 16px;
+        }
+        .lightbox-close {
+            position: absolute;
+            top: -56px;
+            right: 0;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: color 0.3s ease;
+        }
+        .lightbox-close:hover { color: var(--color-accent); }
+        .lightbox-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+            color: white;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+        .lightbox-nav:hover {
+            background: var(--color-accent);
+            color: var(--color-primary-dark);
+            border-color: var(--color-accent);
+        }
+        .lightbox-prev { left: -80px; }
+        .lightbox-next { right: -80px; }
+        .lightbox-counter {
+            position: absolute;
+            bottom: -48px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: rgba(255,255,255,0.6);
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            font-weight: 500;
+        }
+
+        /* ===== MISSION SECTION ===== */
+        .mission-section {
+            background: white;
+            position: relative;
+        }
+        .mission-section::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--color-border), transparent);
+        }
+        .mission-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+        .mission-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 100px;
+            align-items: center;
+        }
+        .mission-image {
+            position: relative;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: var(--shadow-strong);
+        }
+        .mission-image img {
+            width: 100%;
+            height: 540px;
+            object-fit: cover;
+            display: block;
+        }
+        .mission-image::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(180deg, transparent 60%, rgba(107, 45, 92, 0.08) 100%);
+            pointer-events: none;
+        }
+        .mission-content { padding-right: 20px; }
+        .mission-content .section-label { justify-content: flex-start; }
+        .mission-content .section-title { text-align: left; }
+        .mission-content .section-desc { text-align: left; margin-bottom: 40px; }
+        .mission-values {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .mission-value {
+            display: flex;
+            align-items: flex-start;
+            gap: 18px;
+            padding: 24px 28px;
+            background: var(--color-cream);
+            border-radius: 16px;
+            border: 1px solid var(--color-border);
+            transition: all 0.4s var(--transition-smooth);
+        }
+        .mission-value:hover {
+            transform: translateX(6px);
+            border-color: var(--color-accent-light);
+            box-shadow: var(--shadow-soft);
+        }
+        .mission-value-icon {
+            width: 48px; height: 48px;
+            min-width: 48px;
+            background: var(--color-primary);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.1rem;
+            transition: all 0.4s var(--transition-smooth);
+        }
+        .mission-value:hover .mission-value-icon {
+            background: var(--color-accent);
+            color: var(--color-primary-dark);
+        }
+        .mission-value-text h4 {
+            font-family: var(--font-display);
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: var(--color-primary);
+            margin-bottom: 6px;
+        }
+        .mission-value-text p {
+            font-size: 0.92rem;
+            color: var(--color-text-light);
+            line-height: 1.7;
+        }
+
+        /* ===== PHILOSOPHY SECTION ===== */
+        .philosophy-section {
+            background: var(--color-cream);
+            position: relative;
+        }
+        .philosophy-section::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--color-border), transparent);
+        }
+        .philosophy-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+        .philosophy-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 100px;
+            align-items: center;
+        }
+        .philosophy-content { padding-left: 20px; }
+        .philosophy-content .section-label { justify-content: flex-start; }
+        .philosophy-content .section-title { text-align: left; }
+        .philosophy-content .section-desc { text-align: left; margin-bottom: 40px; }
+        .philosophy-image {
+            position: relative;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: var(--shadow-strong);
+            order: 2;
+        }
+        .philosophy-image img {
+            width: 100%;
+            height: 540px;
+            object-fit: cover;
+            display: block;
+        }
+        .philosophy-image::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(180deg, transparent 60%, rgba(107, 45, 92, 0.08) 100%);
+            pointer-events: none;
+        }
+        .philosophy-text-blocks {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            margin-bottom: 40px;
+        }
+        .philosophy-text-blocks p {
+            font-size: 1rem;
+            color: var(--color-text-light);
+            line-height: 1.85;
+        }
+        .philosophy-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+        .philosophy-stat {
+            text-align: center;
+            padding: 32px 24px;
+            background: white;
+            border-radius: 20px;
+            border: 1px solid var(--color-border);
+            transition: all 0.4s var(--transition-smooth);
+        }
+        .philosophy-stat:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-soft);
+            border-color: var(--color-accent-light);
+        }
+        .philosophy-stat-number {
+            font-family: var(--font-display);
+            font-size: 2.6rem;
+            font-weight: 600;
+            color: var(--color-primary);
+            line-height: 1;
+            margin-bottom: 10px;
+        }
+        .philosophy-stat-number span {
+            color: var(--color-accent);
+        }
+        .philosophy-stat-label {
+            font-size: 0.85rem;
+            color: var(--color-text-light);
+            line-height: 1.5;
+            font-weight: 400;
+        }
+
+        /* ===== VALUES SECTION ===== */
+        .values-section {
+            background: white;
+            position: relative;
+        }
+        .values-section::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--color-border), transparent);
+        }
+        .values-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+            margin-top: 60px;
+        }
+        .value-card {
+            text-align: center;
+            padding: 48px 32px;
+            background: var(--color-cream);
+            border-radius: 24px;
+            border: 1px solid var(--color-border);
+            transition: all 0.5s var(--transition-smooth);
+        }
+        .value-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-medium);
+            border-color: var(--color-accent-light);
+        }
+        .value-card-icon {
+            width: 72px; height: 72px;
+            background: var(--color-primary);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 28px;
+            color: white;
+            font-size: 1.6rem;
+            transition: all 0.4s var(--transition-smooth);
+        }
+        .value-card:hover .value-card-icon {
+            background: var(--color-accent);
+            color: var(--color-primary-dark);
+            transform: scale(1.05);
+        }
+        .value-card-title {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: var(--color-primary);
+            margin-bottom: 14px;
+        }
+        .value-card-desc {
+            font-size: 0.95rem;
+            color: var(--color-text-light);
+            line-height: 1.75;
+        }
+
+        /* ===== AFFILIATIONS SECTION ===== */
+        .affiliations-section {
+            background: var(--color-cream);
+            position: relative;
+        }
+        .affiliations-section::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--color-border), transparent);
+        }
+        .affiliations-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+        .affiliations-grid {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 60px;
+            flex-wrap: wrap;
+            margin-top: 60px;
+        }
+        .affiliation-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            padding: 40px 48px;
+            background: white;
+            border-radius: 24px;
+            border: 1px solid var(--color-border);
+            transition: all 0.4s var(--transition-smooth);
+            min-width: 240px;
+            text-align: center;
+        }
+        .affiliation-item:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-medium);
+            border-color: var(--color-accent-light);
+        }
+        .affiliation-item img {
+            height: 90px;
+            width: auto;
+            object-fit: contain;
+            filter: grayscale(20%);
+            transition: filter 0.4s ease;
+        }
+        .affiliation-item:hover img {
+            filter: grayscale(0%);
+        }
+        .affiliation-item span {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--color-text-light);
+            text-align: center;
+            line-height: 1.5;
+        }
+        .affiliation-item span strong {
+            color: var(--color-primary);
+            font-weight: 600;
+        }
+
+        /* ===== CTA SECTION ===== */
+        .cta-section {
+            background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: -50%; right: -20%;
+            width: 600px; height: 600px;
+            background: rgba(201, 169, 110, 0.05);
+            border-radius: 50%;
+        }
+        .cta-section::after {
+            content: '';
+            position: absolute;
+            bottom: -30%; left: -10%;
+            width: 400px; height: 400px;
+            background: rgba(201, 169, 110, 0.03);
+            border-radius: 50%;
+        }
+        .cta-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 40px;
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            padding: 120px 40px;
+        }
+        .cta-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--color-accent-light);
+            font-size: 0.8rem;
+            font-weight: 500;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            margin-bottom: 24px;
+        }
+        .cta-label::before {
+            content: '';
+            width: 32px; height: 1px;
+            background: var(--color-accent);
+        }
+        .cta-label::after {
+            content: '';
+            width: 32px; height: 1px;
+            background: var(--color-accent);
+        }
+        .cta-title {
+            font-family: var(--font-display);
+            font-size: clamp(2.2rem, 4vw, 3.6rem);
+            font-weight: 300;
+            color: white;
+            line-height: 1.2;
+            margin-bottom: 24px;
+        }
+        .cta-title em {
+            font-style: italic;
+            font-weight: 400;
+            color: var(--color-accent-light);
+        }
+        .cta-desc {
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.7);
+            line-height: 1.8;
+            max-width: 600px;
+            margin: 0 auto 40px;
+        }
+        .cta-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .btn-primary-light {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--color-accent);
+            color: var(--color-primary-dark);
+            padding: 18px 40px;
+            border-radius: 100px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+            transition: all 0.4s var(--transition-smooth);
+            border: none;
+            cursor: pointer;
+        }
+        .btn-primary-light:hover {
+            background: var(--color-accent-light);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(201, 169, 110, 0.3);
+        }
+        .btn-secondary-light {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: transparent;
+            color: white;
+            padding: 18px 40px;
+            border-radius: 100px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+            border: 1.5px solid rgba(255,255,255,0.3);
+            transition: all 0.4s var(--transition-smooth);
+            cursor: pointer;
+        }
+        .btn-secondary-light:hover {
+            background: rgba(255,255,255,0.1);
+            border-color: rgba(255,255,255,0.5);
+            transform: translateY(-2px);
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            background: var(--color-primary-dark);
+            color: rgba(255,255,255,0.6);
+            padding: 72px 0 32px;
+        }
+        .footer-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 48px;
+            margin-bottom: 48px;
+        }
+        .footer-brand { max-width: 320px; }
+        .footer-brand-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+        .footer-brand-logo img {
+            height: 40px;
+            width: auto;
+            display: block;
+        }
+        .footer-brand-desc {
+            font-size: 0.9rem;
+            line-height: 1.7;
+            color: rgba(255,255,255,0.5);
+            margin-bottom: 24px;
+        }
+        .footer-social {
+            display: flex;
+            gap: 12px;
+        }
+        .footer-social a {
+            width: 40px; height: 40px;
+            border-radius: 10px;
+            background: rgba(255,255,255,0.08);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(255,255,255,0.6);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        .footer-social a:hover {
+            background: var(--color-accent);
+            color: var(--color-primary-dark);
+        }
+        .footer-col h4 {
+            font-family: var(--font-display);
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: white;
+            margin-bottom: 20px;
+        }
+        .footer-col ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .footer-col a {
+            color: rgba(255,255,255,0.5);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+        .footer-col a:hover { color: var(--color-accent-light); }
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.08);
+            padding-top: 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+        .footer-bottom p {
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.35);
+        }
+        .footer-bottom-links {
+            display: flex;
+            gap: 24px;
+        }
+        .footer-bottom-links a {
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.35);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .footer-bottom-links a:hover { color: var(--color-accent-light); }
+
+        /* ===== MOBILE RESPONSIVE ===== */
+        @media (max-width: 1024px) {
+            .founder-grid,
+            .mission-grid,
+            .philosophy-grid { grid-template-columns: 1fr; gap: 60px; }
+            .founder-content,
+            .mission-content,
+            .philosophy-content { padding: 0; }
+            .founder-content .section-label,
+            .mission-content .section-label,
+            .philosophy-content .section-label { justify-content: center; }
+            .founder-content .section-title,
+            .mission-content .section-title,
+            .philosophy-content .section-title { text-align: center; }
+            .founder-content .section-desc,
+            .mission-content .section-desc,
+            .philosophy-content .section-desc { text-align: center; }
+            .founder-story p,
+            .philosophy-text-blocks p { text-align: center; }
+            .founder-quote { text-align: center; border-left: none; border-top: 3px solid var(--color-accent); border-radius: 16px 16px 0 0; }
+            .founder-signature { align-items: center; }
+            .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+            .values-grid { grid-template-columns: repeat(2, 1fr); }
+            .mission-image,
+            .philosophy-image { order: 1; }
+            .mission-content,
+            .philosophy-content { order: 2; }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+            .lightbox-prev { left: 10px; }
+            .lightbox-next { right: 10px; }
+        }
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 80px; left: 0; right: 0;
+                background: var(--color-cream);
+                flex-direction: column;
+                padding: 24px 40px;
+                gap: 20px;
+                border-bottom: 1px solid var(--color-border);
+                box-shadow: var(--shadow-medium);
+            }
+            .nav-links.active { display: flex; }
+            .mobile-toggle { display: block; }
+            .nav-container { padding: 0 24px; }
+            .page-hero-content { padding: 80px 24px; }
+            .page-hero-title { font-size: 2.4rem; }
+            .page-hero-desc { font-size: 1rem; }
+            .section { padding: 80px 0; }
+            .section-header { margin-bottom: 48px; padding: 0 24px; }
+            .founder-container,
+            .gallery-container,
+            .mission-container,
+            .philosophy-container,
+            .values-container,
+            .affiliations-container,
+            .cta-container,
+            .footer-container { padding: 0 24px; }
+            .founder-video-wrapper video { height: 280px; }
+            .founder-video-badge { display: none; }
+            .mission-image img,
+            .philosophy-image img { height: 320px; }
+            .gallery-grid { grid-template-columns: 1fr; }
+            .values-grid { grid-template-columns: 1fr; }
+            .philosophy-stats { grid-template-columns: 1fr; }
+            .affiliations-grid { gap: 20px; }
+            .affiliation-item { min-width: 160px; padding: 28px 32px; }
+            .cta-container { padding: 80px 24px; }
+            .cta-buttons { flex-direction: column; align-items: center; }
+            .footer-grid { grid-template-columns: 1fr; gap: 36px; }
+            .footer-bottom { flex-direction: column; text-align: center; }
+            .lightbox { padding: 20px; }
+            .lightbox-nav { width: 44px; height: 44px; font-size: 1rem; }
+            .lightbox-prev { left: 5px; }
+            .lightbox-next { right: 5px; }
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-in {
+            opacity: 0;
+            animation: fadeInUp 0.8s var(--transition-smooth) forwards;
+        }
+        .delay-1 { animation-delay: 0.15s; }
+        .delay-2 { animation-delay: 0.3s; }
+        .delay-3 { animation-delay: 0.45s; }
+        .delay-4 { animation-delay: 0.6s; }
+    </style>
+</head>
+<body>
+
+    <!-- NAVIGATION -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <img src="logo.png" alt="iLoveKare">
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="about.html" class="active">About Us</a></li>
+                <li><a href="story.html">Our Story</a></li>
+                <li><a href="team.html">Kare Team</a></li>
+                <li><a href="contact.html" class="nav-cta">Schedule a Consultation</a></li>
+            </ul>
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- PAGE HERO -->
+    <section class="page-hero">
+        <div class="page-hero-content">
+            <div class="page-hero-label animate-in">Who We Are</div>
+            <h1 class="page-hero-title animate-in delay-1">
+                About <em>iLoveKare</em>
+            </h1>
+            <p class="page-hero-desc animate-in delay-2">
+                A trusted name in concierge-style senior care since 2013. 
+                Led by founder Kimberly Haase, we are dedicated to helping aging adults 
+                maintain independence, dignity, and joy throughout Cherokee and Cobb County.
+            </p>
+        </div>
+    </section>
+
+    <!-- FOUNDER VIDEO SECTION -->
+    <section class="section founder-section" id="founder">
+        <div class="founder-container">
+            <div class="founder-grid">
+                <div class="founder-video-wrapper animate-in">
+                    <video controls preload="metadata" poster="images/kimberly-haase-poster.jpg">
+                        <source src="https://img1.wsimg.com/isteam/ip/51e51c2f-ef51-4bfb-9e7a-dc51ca97481e/video/Kimberly%20Haase%20-%2010-3-25.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="founder-video-badge">
+                        <div class="founder-video-badge-icon">
+                            <i class="fas fa-play-circle"></i>
+                        </div>
+                        <div class="founder-video-badge-text">
+                            <span class="founder-video-badge-label">Meet Our Founder</span>
+                            <span class="founder-video-badge-name">Kimberly Haase</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="founder-content animate-in delay-1">
+                    <div class="section-label">Our Founder</div>
+                    <h2 class="section-title">A Passion Born from <em>Experience</em></h2>
+                    <div class="founder-story">
+                        <p>
+                            Kimberly Haase founded iLoveKare with a deeply personal mission: to ensure that 
+                            every senior has access to compassionate, dignified care that feels like family. 
+                            Drawing from her own experiences navigating the care landscape for loved ones, 
+                            she recognized a profound need for <strong>personalized, concierge-level support</strong> 
+                            that treats each client as a unique individual, not a case number.
+                        </p>
+                        <p>
+                            What began as a heartfelt commitment to serving aging adults in the community 
+                            has grown into a trusted concierge care service recognized throughout 
+                            <strong>Cherokee and Cobb County</strong>. Under Kimberly's leadership, iLoveKare has 
+                            built a reputation for excellence — combining professional expertise with genuine 
+                            warmth to create care experiences that truly matter.
+                        </p>
+                        <p>
+                            Today, iLoveKare continues to be guided by the same principles that inspired 
+                            its founding: <strong>trust, compassion, and an unwavering dedication to the dignity 
+                            of every person we serve.</strong>
+                        </p>
+                    </div>
+                    <div class="founder-quote">
+                        We don't just provide care — we build relationships rooted in trust, respect, and genuine compassion. Every client becomes part of our extended family.
+                    </div>
+                    <div class="founder-signature">
+                        <div class="founder-name">Kimberly Haase</div>
+                        <div class="founder-role">Founder & Chief Executive Officer</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GALLERY SECTION (LIGHTBOX) -->
+    <section class="section gallery-section" id="gallery">
+        <div class="gallery-container">
+            <div class="section-header">
+                <div class="section-label">Behind the Scenes</div>
+                <h2 class="section-title">The Heart of <em>Our Work</em></h2>
+                <p class="section-desc">
+                    From team meetings to community outreach, every moment reflects our commitment 
+                    to excellence in senior care. Click any image to view larger.
+                </p>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item" data-index="0" onclick="openLightbox(0)">
+                    <img src="images/meeting-1.jpg" alt="iLoveKare team meeting and discussion">
+                    <div class="gallery-item-overlay">
+                        <span><i class="fas fa-expand"></i> Click to Enlarge</span>
+                    </div>
+                </div>
+                <div class="gallery-item" data-index="1" onclick="openLightbox(1)">
+                    <img src="images/meeting-2.jpg" alt="iLoveKare team presentation and planning">
+                    <div class="gallery-item-overlay">
+                        <span><i class="fas fa-expand"></i> Click to Enlarge</span>
+                    </div>
+                </div>
+                <div class="gallery-item" data-index="2" onclick="openLightbox(2)">
+                    <img src="images/meeting-3.jpg" alt="iLoveKare team collaboration session">
+                    <div class="gallery-item-overlay">
+                        <span><i class="fas fa-expand"></i> Click to Enlarge</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LIGHTBOX OVERLAY -->
+    <div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
+        <div class="lightbox-content" onclick="event.stopPropagation()">
+            <button class="lightbox-close" onclick="closeLightbox()" aria-label="Close lightbox">
+                <i class="fas fa-times"></i>
+            </button>
+            <button class="lightbox-nav lightbox-prev" onclick="changeImage(-1)" aria-label="Previous image">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <img src="" alt="" id="lightboxImage">
+            <button class="lightbox-nav lightbox-next" onclick="changeImage(1)" aria-label="Next image">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+            <div class="lightbox-counter" id="lightboxCounter">1 / 3</div>
+        </div>
+    </div>
+
+    <!-- MISSION SECTION -->
+    <section class="section mission-section" id="mission">
+        <div class="mission-container">
+            <div class="mission-grid">
+                <div class="mission-image animate-in">
+                    <img src="images/team-group.jpg" alt="The iLoveKare team together">
+                </div>
+                <div class="mission-content animate-in delay-1">
+                    <div class="section-label">Our Mission</div>
+                    <h2 class="section-title">Dedicated to Quality,<br><em>Rooted in Compassion</em></h2>
+                    <p class="section-desc">
+                        Since 2013, iLoveKare has been a leader in concierge-based support throughout 
+                        Cherokee and Cobb County. We are committed to helping clients maintain independence, 
+                        dignity, and quality of life through personalized services tailored to their individual needs.
+                    </p>
+                    <div class="mission-values">
+                        <div class="mission-value">
+                            <div class="mission-value-icon">
+                                <i class="fas fa-user-friends"></i>
+                            </div>
+                            <div class="mission-value-text">
+                                <h4>Companion Care</h4>
+                                <p>Helping seniors maintain independence and mobility with customized, one-on-one support that honors their unique lifestyle and preferences.</p>
+                            </div>
+                        </div>
+                        <div class="mission-value">
+                            <div class="mission-value-icon">
+                                <i class="fas fa-laptop"></i>
+                            </div>
+                            <div class="mission-value-text">
+                                <h4>Tech Training & Support</h4>
+                                <p>Patient, hands-on technology education for individuals or small groups — empowering seniors to stay connected in a digital world.</p>
+                            </div>
+                        </div>
+                        <div class="mission-value">
+                            <div class="mission-value-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <div class="mission-value-text">
+                                <h4>Safety Prevention</h4>
+                                <p>Proactive in-home and out-of-home safety measures to reduce risk, prevent accidents, and provide families with genuine peace of mind.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PHILOSOPHY SECTION -->
+    <section class="section philosophy-section" id="philosophy">
+        <div class="philosophy-container">
+            <div class="philosophy-grid">
+                <div class="philosophy-content animate-in">
+                    <div class="section-label">Our Philosophy</div>
+                    <h2 class="section-title">Care That Feels Like <em>Family</em></h2>
+                    <div class="philosophy-text-blocks">
+                        <p>
+                            We believe that exceptional senior care goes far beyond assistance — it is about 
+                            building <strong>meaningful, lasting connections</strong>. Every interaction is an opportunity 
+                            to bring comfort, dignity, and joy to the lives of those we serve. Our approach 
+                            is personal, thoughtful, and always centered on the individual.
+                        </p>
+                        <p>
+                            At iLoveKare, we understand that aging is not a condition to be managed, but a 
+                            journey to be honored. We meet each client where they are, respecting their history, 
+                            their preferences, and their dreams for the future. This is not just care — it is 
+                            <strong>companionship, advocacy, and genuine human connection</strong>.
+                        </p>
+                    </div>
+                    <div class="philosophy-stats">
+                        <div class="philosophy-stat">
+                            <div class="philosophy-stat-number">10<span>+</span></div>
+                            <div class="philosophy-stat-label">Years of Trusted Service</div>
+                        </div>
+                        <div class="philosophy-stat">
+                            <div class="philosophy-stat-number">A<span>+</span></div>
+                            <div class="philosophy-stat-label">BBB Accredited Rating</div>
+                        </div>
+                        <div class="philosophy-stat">
+                            <div class="philosophy-stat-number">100<span>%</span></div>
+                            <div class="philosophy-stat-label">Bonded & Insured</div>
+                        </div>
+                        <div class="philosophy-stat">
+                            <div class="philosophy-stat-number">24<span>/7</span></div>
+                            <div class="philosophy-stat-label">Care Availability</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="philosophy-image animate-in delay-1">
+                    <img src="images/caregiver-senior.jpg" alt="iLoveKare caregiver with senior client">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- VALUES SECTION -->
+    <section class="section values-section" id="values">
+        <div class="values-container">
+            <div class="section-header">
+                <div class="section-label">What We Stand For</div>
+                <h2 class="section-title">Our Core <em>Values</em></h2>
+                <p class="section-desc">
+                    These principles guide every decision we make and every relationship we build. 
+                    They are the foundation of the iLoveKare experience.
+                </p>
+            </div>
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-card-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3 class="value-card-title">Compassion First</h3>
+                    <p class="value-card-desc">
+                        Every interaction is guided by empathy and genuine care. We see the person first, 
+                        not the need — treating each client with the same warmth we would offer our own family.
+                    </p>
+                </div>
+                <div class="value-card">
+                    <div class="value-card-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3 class="value-card-title">Unwavering Trust</h3>
+                    <p class="value-card-desc">
+                        We earn trust through transparency, consistency, and integrity. Families invite us 
+                        into their homes and their lives — we honor that privilege with absolute reliability.
+                    </p>
+                </div>
+                <div class="value-card">
+                    <div class="value-card-icon">
+                        <i class="fas fa-gem"></i>
+                    </div>
+                    <h3 class="value-card-title">Excellence in Everything</h3>
+                    <p class="value-card-desc">
+                        From the first consultation to daily care visits, we pursue excellence without compromise. 
+                        Our BBB A+ rating reflects a standard we refuse to lower.
+                    </p>
+                </div>
+                <div class="value-card">
+                    <div class="value-card-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 class="value-card-title">Personalized Approach</h3>
+                    <p class="value-card-desc">
+                        No two clients are alike, and neither are their care plans. We design bespoke support 
+                        that honors individual routines, preferences, and personal history.
+                    </p>
+                </div>
+                <div class="value-card">
+                    <div class="value-card-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="value-card-title">Safety & Security</h3>
+                    <p class="value-card-desc">
+                        Every team member is thoroughly vetted, bonded, and insured. We create safe environments 
+                        where seniors can thrive with confidence and families can rest easy.
+                    </p>
+                </div>
+                <div class="value-card">
+                    <div class="value-card-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3 class="value-card-title">Dignity Always</h3>
+                    <p class="value-card-desc">
+                        We believe aging with dignity is a right, not a privilege. Every service we provide 
+                        is designed to preserve independence, self-respect, and quality of life.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AFFILIATIONS SECTION -->
+    <section class="section affiliations-section" id="affiliations">
+        <div class="affiliations-container">
+            <div class="section-header">
+                <div class="section-label">Our Affiliations</div>
+                <h2 class="section-title">Trusted by Leading <em>Organizations</em></h2>
+                <p class="section-desc">
+                    We are proud to maintain accreditation and partnerships with respected 
+                    organizations that uphold the highest standards in senior care and business ethics.
+                </p>
+            </div>
+            <div class="affiliations-grid">
+                <div class="affiliation-item">
+                    <img src="images/bbb-logo.png" alt="Better Business Bureau Accredited Business">
+                    <span>BBB Accredited Business<br><strong>A+ Rating</strong></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA SECTION -->
+    <section class="cta-section">
+        <div class="cta-container">
+            <div class="cta-label">Take a Survey</div>
+            <h2 class="cta-title">Help Us Serve You <em>Better</em></h2>
+            <p class="cta-desc">
+                Your feedback matters. Take a brief survey to help us understand your needs 
+                and improve the care we provide to families like yours throughout Cherokee and Cobb County.
+            </p>
+            <div class="cta-buttons">
+                <a href="survey.html" class="btn-primary-light">
+                    <i class="fas fa-clipboard-list"></i>
+                    Take the Survey
+                </a>
+                <a href="contact.html" class="btn-secondary-light">
+                    <i class="fas fa-phone"></i>
+                    Contact Us
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-brand-logo">
+                        <img src="logo.png" alt="iLoveKare">
+                    </div>
+                    <p class="footer-brand-desc">
+                        Trusted concierge support throughout Cherokee and Cobb County. 
+                        Personalized, compassionate support for aging adults seeking compassionate, personalized care.
+                    </p>
+                    <div class="footer-social">
+                        <a href="https://facebook.com/ilovekare" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://instagram.com/ilovekare" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://linkedin.com/company/ilovekare" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://yelp.com/biz/ilovekare" target="_blank" aria-label="Yelp"><i class="fab fa-yelp"></i></a>
+                        <a href="https://youtube.com/ilovekare" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="story.html">Our Story</a></li>
+                        <li><a href="team.html">Kare Team</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="services.html">Companion Care</a></li>
+                        <li><a href="services.html">Tech Training</a></li>
+                        <li><a href="services.html">Travel Concierge</a></li>
+                        <li><a href="services.html">View All</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="resources.html">Senior Resources</a></li>
+                        <li><a href="survey.html">Family Survey</a></li>
+                        <li><a href="contact.html">Careers</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>Copyright 2026 iLoveKare. All Rights Reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // ===== NAVBAR SCROLL EFFECT =====
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // ===== MOBILE MENU TOGGLE =====
+        const mobileToggle = document.getElementById('mobileToggle');
+        const navLinks = document.getElementById('navLinks');
+        mobileToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            const icon = mobileToggle.querySelector('i');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-times');
+        });
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                const icon = mobileToggle.querySelector('i');
+                icon.classList.add('fa-bars');
+                icon.classList.remove('fa-times');
+            });
+        });
+
+        // ===== LIGHTBOX =====
+        const galleryImages = [
+            'images/meeting-1.jpg',
+            'images/meeting-2.jpg',
+            'images/meeting-3.jpg'
+        ];
+        const galleryAlts = [
+            'iLoveKare team meeting and discussion',
+            'iLoveKare team presentation and planning',
+            'iLoveKare team collaboration session'
+        ];
+        let currentImageIndex = 0;
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImage = document.getElementById('lightboxImage');
+        const lightboxCounter = document.getElementById('lightboxCounter');
+
+        function openLightbox(index) {
+            currentImageIndex = index;
+            updateLightbox();
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox(event) {
+            if (!event || event.target === lightbox || event.target.closest('.lightbox-close')) {
+                lightbox.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        }
+
+        function changeImage(direction) {
+            currentImageIndex += direction;
+            if (currentImageIndex < 0) currentImageIndex = galleryImages.length - 1;
+            if (currentImageIndex >= galleryImages.length) currentImageIndex = 0;
+            updateLightbox();
+        }
+
+        function updateLightbox() {
+            lightboxImage.src = galleryImages[currentImageIndex];
+            lightboxImage.alt = galleryAlts[currentImageIndex];
+            lightboxCounter.textContent = (currentImageIndex + 1) + ' / ' + galleryImages.length;
+        }
+
+        // Keyboard navigation for lightbox
+        document.addEventListener('keydown', (e) => {
+            if (!lightbox.classList.contains('active')) return;
+            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'ArrowLeft') changeImage(-1);
+            if (e.key === 'ArrowRight') changeImage(1);
+        });
+    </script>
+
+</body>
+</html>
