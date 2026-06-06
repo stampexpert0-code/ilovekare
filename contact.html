@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us — iLoveKare | Senior Care in Cherokee & Cobb County</title>
+    <meta name="description" content="Contact iLoveKare for a complimentary care assessment. Customized senior care plans in Cherokee and Cobb County. Call (404) 692-0539 or visit our Kennesaw office.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        :root {
+            --color-primary: #6B2D5C;
+            --color-primary-light: #8B4A7A;
+            --color-primary-dark: #4A1F40;
+            --color-accent: #C9A96E;
+            --color-accent-light: #D9C49E;
+            --color-cream: #FAF8F5;
+            --color-warm-white: #FFFFFF;
+            --color-text: #2C2C2C;
+            --color-text-light: #6B6B6B;
+            --color-text-muted: #9A9A9A;
+            --color-border: #E8E4DF;
+            --font-display: 'Cormorant Garamond', Georgia, serif;
+            --font-body: 'Inter', -apple-system, sans-serif;
+            --transition-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+            --shadow-soft: 0 4px 24px rgba(0,0,0,0.06);
+            --shadow-medium: 0 8px 40px rgba(0,0,0,0.08);
+            --shadow-strong: 0 16px 60px rgba(0,0,0,0.12);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; font-size: 16px; }
+        body {
+            font-family: var(--font-body);
+            color: var(--color-text);
+            background: var(--color-cream);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+        /* ===== NAVIGATION ===== */
+        .navbar {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 1000;
+            background: rgba(250, 248, 245, 0.92);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(232, 228, 223, 0.5);
+            transition: all 0.5s var(--transition-smooth);
+        }
+        .navbar.scrolled {
+            background: rgba(250, 248, 245, 0.98);
+            box-shadow: var(--shadow-soft);
+        }
+        .nav-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 80px;
+        }
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+        .nav-logo img {
+            height: 44px;
+            width: auto;
+            display: block;
+        }
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 36px;
+            list-style: none;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: var(--color-text-light);
+            font-size: 0.9rem;
+            font-weight: 400;
+            letter-spacing: 0.3px;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px; left: 0;
+            width: 0; height: 1.5px;
+            background: var(--color-accent);
+            transition: width 0.4s var(--transition-smooth);
+        }
+        .nav-links a:hover { color: var(--color-primary); }
+        .nav-links a:hover::after { width: 100%; }
+        .nav-links a.active { color: var(--color-primary); }
+        .nav-links a.active::after { width: 100%; }
+        .nav-cta {
+            background: var(--color-primary);
+            color: white !important;
+            padding: 12px 28px;
+            border-radius: 100px;
+            font-weight: 500 !important;
+            font-size: 0.85rem !important;
+            letter-spacing: 0.5px;
+            transition: all 0.4s var(--transition-smooth);
+            border: none;
+            cursor: pointer;
+        }
+        .nav-cta::after { display: none !important; }
+        .nav-cta:hover {
+            background: var(--color-primary-dark);
+            transform: translateY(-1px);
+            box-shadow: 0 6px 20px rgba(107, 45, 92, 0.2);
+        }
+        .mobile-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--color-primary);
+            cursor: pointer;
+        }
+        /* ===== PAGE HERO ===== */
+        .page-hero {
+            min-height: 55vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            padding-top: 80px;
+            background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary) 50%, var(--color-primary-light) 100%);
+        }
+        .page-hero::before {
+            content: '';
+            position: absolute;
+            top: -50%; right: -20%;
+            width: 600px; height: 600px;
+            background: rgba(201, 169, 110, 0.06);
+            border-radius: 50%;
+        }
+        .page-hero::after {
+            content: '';
+            position: absolute;
+            bottom: -30%; left: -10%;
+            width: 400px; height: 400px;
+            background: rgba(201, 169, 110, 0.04);
+            border-radius: 50%;
+        }
+        .page-hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 100px 40px;
+            width: 100%;
+            text-align: center;
+        }
+        .page-hero-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--color-accent-light);
+            font-size: 0.8rem;
+            font-weight: 500;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            margin-bottom: 24px;
+        }
+        .page-hero-label::before {
+            content: '';
+            width: 32px; height: 1px;
+            background: var(--color-accent);
+        }
+        .page-hero-label::after {
+            content: '';
+            width: 32px; height: 1px;
+            background: var(--color-accent);
+        }
+        .page-hero-title {
+            font-family: var(--font-display);
+            font-size: clamp(2.8rem, 5vw, 4.2rem);
+            font-weight: 300;
+            color: white;
+            line-height: 1.15;
+            margin-bottom: 24px;
+        }
+        .page-hero-title em {
+            font-style: italic;
+            font-weight: 400;
+            color: var(--color-accent-light);
+        }
+        .page-hero-desc {
+            font-size: 1.15rem;
+            color: rgba(255,255,255,0.75);
+            line-height: 1.8;
+            max-width: 700px;
+            margin: 0 auto;
+            font-weight: 300;
+        }
+        /* ===== SECTIONS COMMON ===== */
+        .section { padding: 120px 0; }
+        .section-header {
+            text-align: center;
+            max-width: 720px;
+            margin: 0 auto 80px;
+        }
+        .section-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--color-accent);
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+        .section-label::before {
+            content: '';
+            width: 24px; height: 1px;
+            background: var(--color-accent);
+        }
+        .section-title {
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 3.5vw, 2.8rem);
+            font-weight: 300;
+            color: var(--color-primary);
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+        .section-title em {
+            font-style: italic;
+            font-weight: 400;
+            color: var(--color-accent);
+        }
+        .section-desc {
+            font-size: 1.05rem;
+            color: var(--color-text-light);
+            line-height: 1.8;
+        }
+
+        /* ===== CONTACT SPLIT SECTION ===== */
+        .contact-split-section {
+            background: white;
+            position: relative;
+        }
+        .contact-split-section::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--color-border), transparent);
+        }
+        .contact-split-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+        .contact-split-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: start;
+        }
+        .contact-image-side {
+            position: relative;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: var(--shadow-strong);
+        }
+        .contact-image-side img {
+            width: 100%;
+            height: 560px;
+            object-fit: cover;
+            display: block;
+        }
+        .contact-image-side::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(180deg, transparent 60%, rgba(107, 45, 92, 0.08) 100%);
+            pointer-events: none;
+        }
+        .contact-form-side {
+            background: var(--color-cream);
+            border-radius: 24px;
+            padding: 48px 40px;
+            border: 1px solid var(--color-border);
+        }
+        .contact-form-title {
+            font-family: var(--font-display);
+            font-size: 1.6rem;
+            font-weight: 500;
+            color: var(--color-primary);
+            margin-bottom: 8px;
+        }
+        .contact-form-subtitle {
+            font-size: 0.95rem;
+            color: var(--color-text-light);
+            line-height: 1.7;
+            margin-bottom: 32px;
+        }
+        .contact-form-subtitle strong {
+            color: var(--color-primary);
+            font-weight: 500;
+        }
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+        .form-group label {
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: var(--color-text-light);
+            letter-spacing: 0.3px;
+        }
+        .form-group input,
+        .form-group textarea {
+            padding: 14px 18px;
+            border: 1.5px solid var(--color-border);
+            border-radius: 12px;
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            color: var(--color-text);
+            background: white;
+            transition: all 0.3s var(--transition-smooth);
+            outline: none;
+        }
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: var(--color-accent);
+            box-shadow: 0 0 0 4px rgba(201, 169, 110, 0.1);
+        }
+        .form-group textarea { min-height: 120px; resize: vertical; }
+        .form-checkbox {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 8px 0;
+        }
+        .form-checkbox input {
+            width: 20px; height: 20px;
+            accent-color: var(--color-primary);
+            margin-top: 2px;
+            flex-shrink: 0;
+        }
+        .form-checkbox label {
+            font-size: 0.85rem;
+            color: var(--color-text-light);
+            line-height: 1.5;
+        }
+        .form-submit {
+            background: var(--color-primary);
+            color: white;
+            padding: 16px 32px;
+            border-radius: 12px;
+            border: none;
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.4s var(--transition-smooth);
+            margin-top: 8px;
+        }
+        .form-submit:hover {
+            background: var(--color-primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(107, 45, 92, 0.25);
+        }
+        .form-privacy {
+            font-size: 0.75rem;
+            color: var(--color-text-muted);
+            text-align: center;
+            margin-top: 16px;
+        }
+        .form-privacy a {
+            color: var(--color-primary);
+            text-decoration: none;
+        }
+        .form-privacy a:hover { text-decoration: underline; }
+        .contact-phone-cta {
+            text-align: center;
+            margin-top: 32px;
+            padding-top: 32px;
+            border-top: 1px solid var(--color-border);
+        }
+        .contact-phone-cta a {
+            font-family: var(--font-display);
+            font-size: 1.8rem;
+            font-weight: 500;
+            color: var(--color-primary);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .contact-phone-cta a:hover { color: var(--color-accent); }
+        .contact-phone-cta p {
+            font-size: 0.85rem;
+            color: var(--color-text-muted);
+            margin-top: 8px;
+        }
+
+        /* ===== MAP SECTION ===== */
+        .map-section {
+            background: var(--color-cream);
+            position: relative;
+        }
+        .map-section::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--color-border), transparent);
+        }
+        .map-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 40px 120px;
+        }
+        .map-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .map-wrapper {
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid var(--color-border);
+            box-shadow: var(--shadow-soft);
+        }
+        .map-wrapper iframe {
+            width: 100%;
+            height: 420px;
+            border: none;
+            display: block;
+        }
+        .map-directions-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--color-primary);
+            color: white;
+            padding: 14px 32px;
+            border-radius: 100px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            margin-top: 24px;
+            transition: all 0.4s var(--transition-smooth);
+        }
+        .map-directions-btn:hover {
+            background: var(--color-primary-dark);
+            transform: translateY(-2px);
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            background: var(--color-primary-dark);
+            color: rgba(255,255,255,0.6);
+            padding: 72px 0 32px;
+        }
+        .footer-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 48px;
+            margin-bottom: 48px;
+        }
+        .footer-brand { max-width: 320px; }
+        .footer-brand-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+        .footer-brand-logo img {
+            height: 40px;
+            width: auto;
+            display: block;
+        }
+        .footer-brand-desc {
+            font-size: 0.9rem;
+            line-height: 1.7;
+            color: rgba(255,255,255,0.5);
+            margin-bottom: 24px;
+        }
+        .footer-social {
+            display: flex;
+            gap: 12px;
+        }
+        .footer-social a {
+            width: 40px; height: 40px;
+            border-radius: 10px;
+            background: rgba(255,255,255,0.08);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(255,255,255,0.6);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        .footer-social a:hover {
+            background: var(--color-accent);
+            color: var(--color-primary-dark);
+        }
+        .footer-col h4 {
+            font-family: var(--font-display);
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: white;
+            margin-bottom: 20px;
+        }
+        .footer-col ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .footer-col a {
+            color: rgba(255,255,255,0.5);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+        .footer-col a:hover { color: var(--color-accent-light); }
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.08);
+            padding-top: 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+        .footer-bottom p {
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.35);
+        }
+        .footer-bottom-links {
+            display: flex;
+            gap: 24px;
+        }
+        .footer-bottom-links a {
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.35);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .footer-bottom-links a:hover { color: var(--color-accent-light); }
+
+        /* ===== MOBILE RESPONSIVE ===== */
+        @media (max-width: 1024px) {
+            .contact-split-grid { grid-template-columns: 1fr; gap: 60px; }
+            .contact-image-side { max-width: 600px; margin: 0 auto; }
+            .contact-image-side img { height: 400px; }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+        }
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 80px; left: 0; right: 0;
+                background: var(--color-cream);
+                flex-direction: column;
+                padding: 24px 40px;
+                gap: 20px;
+                border-bottom: 1px solid var(--color-border);
+                box-shadow: var(--shadow-medium);
+            }
+            .nav-links.active { display: flex; }
+            .mobile-toggle { display: block; }
+            .nav-container { padding: 0 24px; }
+            .page-hero-content { padding: 80px 24px; }
+            .page-hero-title { font-size: 2.4rem; }
+            .page-hero-desc { font-size: 1rem; }
+            .section { padding: 80px 0; }
+            .section-header { margin-bottom: 48px; padding: 0 24px; }
+            .contact-split-container,
+            .map-container,
+            .footer-container { padding: 0 24px; }
+            .contact-image-side img { height: 280px; }
+            .contact-form-side { padding: 32px 24px; }
+            .contact-phone-cta a { font-size: 1.4rem; }
+            .map-container { padding: 0 24px 80px; }
+            .map-wrapper iframe { height: 300px; }
+            .footer-grid { grid-template-columns: 1fr; gap: 36px; }
+            .footer-bottom { flex-direction: column; text-align: center; }
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-in {
+            opacity: 0;
+            animation: fadeInUp 0.8s var(--transition-smooth) forwards;
+        }
+        .delay-1 { animation-delay: 0.15s; }
+        .delay-2 { animation-delay: 0.3s; }
+    </style>
+</head>
+<body>
+
+    <!-- NAVIGATION -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <img src="logo.png" alt="iLoveKare">
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="story.html">Our Story</a></li>
+                <li><a href="team.html">Kare Team</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="contact.html" class="active">Contact Us</a></li>
+                <li><a href="survey.html">Survey</a></li>
+                <li><a href="contact.html" class="nav-cta">Schedule a Consultation</a></li>
+            </ul>
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- PAGE HERO -->
+    <section class="page-hero">
+        <div class="page-hero-content">
+            <div class="page-hero-label animate-in">Get in Touch</div>
+            <h1 class="page-hero-title animate-in delay-1">
+                Contact <em>Us</em>
+            </h1>
+            <p class="page-hero-desc animate-in delay-2">
+                We'd love to hear from you. Contact us for a complimentary care assessment 
+                and let us customize a plan for you or your loved one that will suite your unique needs.
+            </p>
+        </div>
+    </section>
+
+    <!-- CONTACT SPLIT SECTION -->
+    <section class="section contact-split-section" id="contact">
+        <div class="contact-split-container">
+            <div class="contact-split-grid">
+                <div class="contact-image-side animate-in">
+                    <img src="images/contact-seniors.jpg" alt="Senior couple looking at tablet together">
+                </div>
+                <div class="contact-form-side animate-in delay-1">
+                    <h3 class="contact-form-title">Senior Care Contact Page</h3>
+                    <p class="contact-form-subtitle">
+                        We'd love to hear from you! Contact us for a complimentary care assessment and let us customize a plan for you or your loved one that will <strong>suite your unique needs</strong>.
+                    </p>
+                    <form class="contact-form" action="#" method="POST">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" placeholder="Your name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" placeholder="your@email.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone</label>
+                            <input type="tel" id="phone" name="phone" placeholder="(404) 000-0000">
+                        </div>
+                        <div class="form-checkbox">
+                            <input type="checkbox" id="emailList" name="emailList">
+                            <label for="emailList">Sign up for our email list for updates, promotions, and more.</label>
+                        </div>
+                        <button type="submit" class="form-submit">Send</button>
+                        <p class="form-privacy">
+                            This site is protected by reCAPTCHA and the Google <a href="https://policies.google.com/privacy" target="_blank">Privacy Policy</a> and <a href="https://policies.google.com/terms" target="_blank">Terms of Service</a> apply.
+                        </p>
+                    </form>
+                    <div class="contact-phone-cta">
+                        <a href="tel:4046920539">404-692-0539</a>
+                        <p>Call us directly for immediate assistance</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MAP SECTION -->
+    <section class="section map-section">
+        <div class="map-container">
+            <div class="map-header">
+                <div class="section-label">Find Us</div>
+                <h2 class="section-title">Visit Our <em>Office</em></h2>
+            </div>
+            <div class="map-wrapper">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3308.720722223!2d-84.62345!3d34.03456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88f56a1c2b2b2b2b%3A0x1a2b3c4d5e6f7g8h!2s2774+Cobb+Pkwy+NW+STE+109%2C+Kennesaw%2C+GA+30152!5e0!3m2!1sen!2sus!4v1700000000000" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+            <div style="text-align: center;">
+                <a href="https://maps.google.com/?q=2774+Cobb+Pkwy+NW+STE+109,+Kennesaw,+GA+30152" 
+                   target="_blank" 
+                   class="map-directions-btn">
+                    <i class="fas fa-location-arrow"></i>
+                    Get Directions
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-brand-logo">
+                        <img src="logo.png" alt="iLoveKare">
+                    </div>
+                    <p class="footer-brand-desc">
+                        Trusted concierge support throughout Cherokee and Cobb County. 
+                        Personalized, compassionate support for aging adults seeking compassionate, personalized care.
+                    </p>
+                    <div class="footer-social">
+                        <a href="https://facebook.com/ilovekare" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://instagram.com/ilovekare" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://linkedin.com/company/ilovekare" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://yelp.com/biz/ilovekare" target="_blank" aria-label="Yelp"><i class="fab fa-yelp"></i></a>
+                        <a href="https://youtube.com/ilovekare" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="story.html">Our Story</a></li>
+                        <li><a href="team.html">Kare Team</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="services.html">Companion Care</a></li>
+                        <li><a href="services.html">Tech Training</a></li>
+                        <li><a href="services.html">Travel Concierge</a></li>
+                        <li><a href="services.html">View All</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="resources.html">Senior Resources</a></li>
+                        <li><a href="survey.html">Family Survey</a></li>
+                        <li><a href="contact.html">Careers</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>Copyright 2026 iLoveKare. All Rights Reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) navbar.classList.add('scrolled');
+            else navbar.classList.remove('scrolled');
+        });
+        const mobileToggle = document.getElementById('mobileToggle');
+        const navLinks = document.getElementById('navLinks');
+        mobileToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            const icon = mobileToggle.querySelector('i');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-times');
+        });
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                const icon = mobileToggle.querySelector('i');
+                icon.classList.add('fa-bars');
+                icon.classList.remove('fa-times');
+            });
+        });
+    </script>
+
+</body>
+</html>
